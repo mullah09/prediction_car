@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <!--Main content-->
+    <section class="container margin-bottom-50"> 
+         
+      <div class="about-container">
+      
+        <div class="about-container-left">
+          <img src="{{ url_for('static', filename='img/about/jazz.jpg') }}" alt="Image" class="img-responsive">
+
+        </div>
+        
+        <div class="about-container-right">
+          <h2 class="about-title">Honda Jazz 2010</h2>
+          <p class="about-description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
+          <p class="about-description">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
+          <a href="#" class="about-link">Lihat Detil</a>
+        </div>
+        
+      </div>
+
+      <div class="about-container-2 margin-bottom-50">
+        <div class="about-container-inner">
+          <h3 class="about-title-2">Toyota Fortuner 2019</h3>
+          <img src="{{ url_for('static', filename='img/about/3.jpg') }}" alt="Image" class="img-responsive margin-bottom-15">          
+          <p class="about-description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+          <a href="#" class="about-link about-link-2">Lihat Detil</a>
+        </div>
+        <div class="about-container-inner">
+          <h3 class="about-title-2">Toyota Rush 2017</h3>
+          <img src="{{ url_for('static', filename='img/about/4.jpg') }}" alt="Image" class="img-responsive margin-bottom-15">          
+          <p class="about-description">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+          <a href="#" class="about-link about-link-2">Lihat Detil</a>
+        </div>
+      </div>
+    </section> 
+    <!-- Main content -->
+    <!-- JS -->
+    
+{% endblock %}
+

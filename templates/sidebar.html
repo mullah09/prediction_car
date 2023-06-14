@@ -1,0 +1,23 @@
+<style>
+    .sidebar {
+      background: linear-gradient(to bottom, #000000, #333333);
+      color: #ffffff;
+    }
+    
+    .content {
+      margin-bottom: 20px;
+    }
+  </style>
+<div class="col-md-4 sidebar">
+    <h1>DASHBOARD</h1>
+    <img src="{{ url_for('static', filename='img/0.jpg') }}" alt="Profile Picture" class="img-responsive">
+    <p>Status: Active</p>
+    <ul class="nav nav-pills nav-stacked">
+      <li {% if active_page == 'profile' %}class="active"{% endif %}><a href="{{ url_for('profile') }}">Profile</a></li>
+      <li {% if active_page == 'wishlists' %}class="active"{% endif %}><a href="{{ url_for('wishlists') }}">Wishlist</a></li>
+      <li><a href="#">Change Password</a></li>
+      <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    </ul>
+  </div>
+  
+  

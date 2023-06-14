@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div>
+      <div class="col-12" style="text-align: center;">
+        <h1>Prediksi Harga Mobil</h1>
+      </div>
+    </div>
+    <div >
+
+      <form method="post" accept-charset="utf-8">
+
+        <div class="col-18 form-group">
+          <label for="name"><b>Pilih nama mobil:</b></label>
+          <select class="selectpicker form-control" id="name" name="name" required="1">
+            {% for name in name %}
+            <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+
+        <div class="col-18 form-group">
+          <label for="year"><b>Pilih tahun produksi mobil:</b></label>
+          <input class="form-control" type="text" id="year" name="year" placeholder="Enter year">
+        </div>
+
+        <div class="col-18 form-group">
+          <label for="fuel_type"><b>Jenis bahan bakar:</b></label>
+          <select class="selectpicker form-control" id="fuel_type" name="fuel_type" required="1">
+            {% for fuel_type in fuel_type %}
+            <option value="{{ fuel_type }}">{{ fuel_type }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+
+        <div class="col-18 form-group">
+          <label for="km_driven"><b>Jumlah Kilometer Mobil:</b></label>
+          <select class="selectpicker form-control" id="km_driven" name="km_driven" required="1">
+            {% for km_driven in km_driven %}
+            <option value="{{ km_driven }}">{{ km_driven }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="col-18 form-group">
+          <label for="transmission"><b>Pilih Transmisi yang digunakan:</b></label>
+          <select class="selectpicker form-control" id="transmission" name="transmission" required="1">
+            {% for transmission in transmission %}
+            <option value="{{ transmission }}">{{ transmission }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="send_data()">Cek Harga</button>
+      </form>
+      <br>  
+
+      <div class="row">
+        <div class="col-12">
+          <h3><span id="prediction"></span></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+   
+
+    function form_handler(event) {
+      event.preventDefault();
+    }
+
+    function send_data() {
+      document.querySelector('form').addEventListener('submit', form_handler);
+
+      var fd = new FormData(document.querySelector('form'));
+
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('POST', '/predict', true);
+      document.getElementById("prediction").innerHTML = "wait";
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          document.getElementById("prediction").innerHTML = "Harga mobil bekas sekitar: " + xhr.responseText;
+        }
+      }
+
+      xhr.onload = function() {};
+      xhr.send(fd);
+    }
+  </script>
+  {% endblock %}

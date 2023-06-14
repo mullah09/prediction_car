@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Main content -->
+<section class="container tm-contact-main">
+    <div class="row">
+    <div class="contact-form-container">
+      <h2 class="contact-title">Kontak Kami</h2>
+      <p>Kami senang mendengar dari Anda! Jika Anda memiliki pertanyaan, masukan, atau butuh bantuan, jangan ragu untuk menghubungi kami. Tim kami yang ramah dan profesional siap membantu Anda dengan segala kebutuhan Anda terkait jual beli mobil bekas. Silakan hubungi kami melalui informasi kontak di bawah ini:</p>
+      <form action="#" method="post" class="tm-contact-form">
+        <div class="col-lg-5 col-md-5 contact-form-left">
+          <div class="form-group">
+            <input type="text" id="contact_name" class="form-control" placeholder="NAME" />
+          </div>
+          <div class="form-group">
+            <input type="email" id="contact_email" class="form-control" placeholder="EMAIL" />
+          </div>
+          <div class="form-group">
+            <input type="text" id="contact_subject" class="form-control" placeholder="SUBJECT" />
+          </div>                
+        </div>
+        <div class="col-lg-7 col-md-7 contact-form-right">
+          <div class="form-group margin-bottom-0">
+            <textarea id="contact_message" class="form-control" rows="6" placeholder="MESSAGE"></textarea>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 submit-btn-container">
+          <button type="submit" name="submit" class="btn text-uppercase templatemo-submit-btn">Send Message</button>  
+        </div>                        
+      </form>
+    </div>
+  </div>          
+</section>
+<!-- End Main content -->
+{% endblock %}
